@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby 
+
+require "bundler/setup"
+require "ruby_project_2"
+
+RubyProject2::CLI.new.call 
+
+# we are calling the CLI class, then using .new to create a new instance of it, then we are invoking .call method 
