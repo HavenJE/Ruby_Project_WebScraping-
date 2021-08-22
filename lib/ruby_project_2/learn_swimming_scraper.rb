@@ -17,7 +17,7 @@ module RubyProject2
         def op_hours 
             hours = school_page
 
-            hours.css('ul.mt-5').map do |hour|
+            hours.css('ul.mt-5 li:nth-child(-n+7)').map do |hour|
                 hour.text.strip
             end 
         end
@@ -75,7 +75,7 @@ end
 
 
 # puts "Are you interested to know about Rackley School Free Lessons🏊‍♂️? (Please type either Yes or No)"
-
+# rackley = LearnSwimmingScraper.new
 # puts rackley.swimSafety_lesson
 # puts rackley.comeAndTry_lesson
 # puts rackley.babySplash_lesson
