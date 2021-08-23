@@ -3,8 +3,9 @@ module RubyProject2
     class CLI 
         def call
             @swimming_school = LearnSwimmingScraper.new 
-            puts "=========================================================================="
-            puts "Welcome to our Swim Teaching School 🏊‍♂️! If you would like to navigate thourgh our School information and read what we offer to your lovely children, then please follow our prompts: "
+            puts "**************************************************************************************"
+            puts "====================🏊‍♂️ Welcome to our Swim Teaching School!🏊‍♂️===================="
+            puts "If you would like to navigate thourgh our School information and read what we offer to your lovely children, then please select the following options: "
             puts "=========================================================================="
             puts "Type Yes to read about what would you expect from our School!"
             puts "Type Free to learn about our lessons!"
@@ -21,7 +22,6 @@ module RubyProject2
         end 
 
         def user_option 
-
             input = gets
 
             case input.strip
@@ -37,12 +37,16 @@ module RubyProject2
                 puts "***************************************************************************"
                 puts "You can type 1, 2 or 3 to read more about our free lessons!"
                 user_option
-            
             when "Op"
                 puts "=========================================================================="
-                puts @swimming_school.op_hours
+                puts @swimming_school.print_op_hours
                 puts "=========================================================================="
+                puts "If you like to review any section again, then please select the previous options' keywords or type Exit to exit!"
+                puts "=========================================================================="
+                user_option
             when "Exit"
+                puts "=========================================================================="
+                puts "We would like to hear from you later then! Bye for now & have a great day!"
                 exit 
             else 
                 input = input.strip.to_i

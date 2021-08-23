@@ -14,17 +14,27 @@ module RubyProject2
             desc.css('div.w-full p:nth-child(odd)').text.strip  
         end 
 
-        def op_hours 
-            hours = school_page
+        # def op_hours 
+        #     hours = school_page
 
-            hours.css('ul.mt-5 li:nth-child(-n+7)').map do |hour|
-                hour.text.strip
-            end 
-        end
+        #     hours.css('ul.mt-5 li:nth-child(-n+7)').map do |hour|
+        #         hour.text.strip
+        #     end 
+        # end
+
+        def print_op_hours
+            puts "1. Mon:   2:30pm - 6:00pm"
+            puts "2. Tue:   2:30pm - 6:00pm"
+            puts "3. Wed:   7:30am - 6:30pm"
+            puts "4. Thurs: 2:30pm - 6:00pm"
+            puts "5. Fri:   7:30am - 11:00am"
+            puts "6. Sat:   7:30am - 11:30am"
+            puts "7. Sun:   7:30am - 11:30am" 
+        end 
 
         def free_lessons 
 
-            url = "https://www.rackleyswimming.com.au/free-swim-safety-check"
+            url = "https://www.rackleyswimming.com.au/free-lessons"
             uri = URI.parse(url)
             parsed_page = Nokogiri::HTML(uri.open)
 
